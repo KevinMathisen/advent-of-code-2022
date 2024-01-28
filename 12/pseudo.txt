@@ -1,0 +1,51 @@
+abcdefghijklmnopqrstuvwxyz
+
+data
+	coordinates, elevation, distance from start, previous tile, if visited (if all neighbours been checked)
+	
+	tiles - [
+		[ [ elevation, distance, prevous-x, prev-y ], [ ], ... [] ],
+		...
+	]
+
+	to_visist - [ 
+		[ x, y, distance ],
+		...
+	]
+
+	unvisisted_tiles  - [ 
+		[ x, y ],
+		...
+	]
+
+
+for each move
+
+	check if unvisited TILES empty
+
+
+	go to unvisisted TILE with lowest distance
+		for each neigbourTILE
+
+			check if same or one higher elevation			
+
+			calulcate distance to neigbourTILE
+			check if new lowest distance to neigbourTILE
+				save TILE, new distance to neignourTILE
+	
+		after all neigbours checked, mark as visisted
+
+	
+
+
+-----------
+
+	move best unique way toward TOP
+		
+		check if minimum path 
+
+		cant backtrace
+		cant move in another path
+		- given this, move direction which moves us closest to the top, based on our position and TOP
+	
+	save move to PATH, along with length
